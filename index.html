@@ -7,190 +7,118 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --bg:#0d1821;--card:#192130;--card2:#1f2d40;--border:#2a3d55;--border2:#364e6a;
-  --text:#eef2ff;--muted:#7a92b0;
-  --gold:#f1c40f;--green:#2ecc71;--green-d:#1a9e50;
-  --orange:#f39c12;--red:#e74c3c;--purple:#9b59b6;--blue:#3498db;--cyan:#1abc9c;
-}
+:root{--bg:#0d1821;--card:#192130;--border:#2a3d55;--border2:#364e6a;--text:#eef2ff;--muted:#7a92b0;--gold:#f1c40f;--green:#2ecc71;--red:#e74c3c;--purple:#9b59b6;--orange:#f39c12;--cyan:#1abc9c;}
 body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:16px;overflow-x:hidden;}
-body::before{content:'';position:fixed;inset:0;background:
-  radial-gradient(ellipse at 15% 50%,rgba(46,204,113,.07) 0,transparent 55%),
-  radial-gradient(ellipse at 85% 20%,rgba(155,89,182,.06) 0,transparent 50%),
-  radial-gradient(ellipse at 55% 88%,rgba(52,152,219,.05) 0,transparent 50%);
-  pointer-events:none;z-index:0;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 15% 50%,rgba(46,204,113,.07) 0,transparent 55%),radial-gradient(ellipse at 85% 20%,rgba(155,89,182,.06) 0,transparent 50%),radial-gradient(ellipse at 55% 88%,rgba(52,152,219,.05) 0,transparent 50%);pointer-events:none;z-index:0;}
 .stars{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
-.star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;opacity:0;
-  animation:twinkle var(--d) ease-in-out infinite;animation-delay:var(--dl);}
+.star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;opacity:0;animation:twinkle var(--d) ease-in-out infinite;animation-delay:var(--dl);}
 @keyframes twinkle{0%,100%{opacity:0;transform:scale(.8)}50%{opacity:.5;transform:scale(1.2)}}
-.wrap{position:relative;z-index:1;width:100%;max-width:580px;}
-
-/* SCREENS */
-.screen{display:none;animation:fadeUp .35s ease;}
-.screen.active{display:block;}
+.wrap{position:relative;z-index:1;width:100%;max-width:600px;}
+.screen{display:none;animation:fadeUp .35s ease;}.screen.active{display:block;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 
-/* ── MENU ── */
-.logo{text-align:center;margin-bottom:22px;}
-.logo-row{font-size:54px;display:block;animation:bob 2.2s ease-in-out infinite;
-  filter:drop-shadow(0 0 18px rgba(46,204,113,.35));}
+/* MENU */
+.logo{text-align:center;margin-bottom:20px;}
+.logo-row{font-size:50px;display:block;animation:bob 2.2s ease-in-out infinite;filter:drop-shadow(0 0 18px rgba(46,204,113,.35));}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-.logo h1{font-family:'Fredoka One',cursive;font-size:28px;font-weight:400;
-  background:linear-gradient(135deg,#2ecc71,#f1c40f,#e74c3c,#9b59b6);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  margin-top:6px;line-height:1.15;}
+.logo h1{font-family:'Fredoka One',cursive;font-size:27px;font-weight:400;background:linear-gradient(135deg,#2ecc71,#f1c40f,#e74c3c,#9b59b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:6px;line-height:1.15;}
 .logo p{font-size:13px;color:var(--muted);margin-top:4px;}
-
-.ops-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:18px;}
-.op-chip{background:var(--card);border:1px solid var(--border);border-radius:12px;
-  padding:11px 8px;text-align:center;font-size:11px;font-weight:700;color:var(--muted);}
-.op-chip .icon{font-size:20px;display:block;margin-bottom:3px;}
-.op-chip.cd{border-color:rgba(52,152,219,.4);color:#3498db;}
-.op-chip.cf{border-color:rgba(155,89,182,.4);color:#9b59b6;}
-.op-chip.cm{border-color:rgba(46,204,113,.4);color:#2ecc71;}
-.op-chip.cv{border-color:rgba(243,156,18,.4);color:#f39c12;}
-.op-chip.cp{border-color:rgba(231,76,60,.4);color:#e74c3c;}
-.op-chip.ce{border-color:rgba(26,188,156,.4);color:#1abc9c;}
-
-.tiers{display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap;}
-.tier-chip{flex:1;min-width:110px;padding:9px 8px;border-radius:10px;border:1px solid;
-  text-align:center;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;line-height:1.5;}
+.ops-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:14px;}
+.op-chip{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:10px 6px;text-align:center;font-size:11px;font-weight:700;color:var(--muted);}
+.op-chip .icon{font-size:19px;display:block;margin-bottom:3px;}
+.op-chip.cd{border-color:rgba(52,152,219,.4);color:#3498db;}.op-chip.cf{border-color:rgba(155,89,182,.4);color:#9b59b6;}
+.op-chip.cm{border-color:rgba(46,204,113,.4);color:#2ecc71;}.op-chip.cv{border-color:rgba(243,156,18,.4);color:#f39c12;}
+.op-chip.cp{border-color:rgba(231,76,60,.4);color:#e74c3c;}.op-chip.ce{border-color:rgba(26,188,156,.4);color:#1abc9c;}
+.tiers{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;}
+.tier-chip{flex:1;min-width:100px;padding:9px 6px;border-radius:10px;border:1px solid;text-align:center;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;line-height:1.5;}
 .tc-f{background:rgba(46,204,113,.1);border-color:rgba(46,204,113,.3);color:#2ecc71;}
 .tc-m{background:rgba(243,156,18,.1);border-color:rgba(243,156,18,.3);color:#f39c12;}
 .tc-d{background:rgba(231,76,60,.1);border-color:rgba(231,76,60,.3);color:#e74c3c;}
 .tc-i{background:rgba(155,89,182,.1);border-color:rgba(155,89,182,.3);color:#9b59b6;}
-
-.rules-card{background:var(--card);border:1px solid var(--border);border-radius:18px;
-  padding:18px;margin-bottom:18px;font-size:13px;color:var(--muted);line-height:1.75;}
-.rules-card strong{color:var(--text);}
-.sep{height:1px;background:var(--border);margin:10px 0;}
-
-.btn-start{width:100%;font-family:'Fredoka One',cursive;font-size:22px;font-weight:400;
-  padding:17px;border-radius:16px;border:none;
-  background:linear-gradient(135deg,#2ecc71,#1a9e50);color:#fff;cursor:pointer;
-  box-shadow:0 4px 22px rgba(46,204,113,.35);transition:transform .15s,box-shadow .15s;letter-spacing:.5px;}
+.rules-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:16px;margin-bottom:16px;font-size:13px;color:var(--muted);line-height:1.75;}
+.rules-card strong{color:var(--text);}.sep{height:1px;background:var(--border);margin:9px 0;}
+.btn-start{width:100%;font-family:'Fredoka One',cursive;font-size:21px;font-weight:400;padding:16px;border-radius:16px;border:none;background:linear-gradient(135deg,#2ecc71,#1a9e50);color:#fff;cursor:pointer;box-shadow:0 4px 22px rgba(46,204,113,.35);transition:transform .15s,box-shadow .15s;}
 .btn-start:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(46,204,113,.45);}
 
-/* ── HUD ── */
-.hud{display:flex;gap:8px;margin-bottom:12px;}
-.hud-card{flex:1;background:var(--card);border:1px solid var(--border);
-  border-radius:13px;padding:9px 10px;text-align:center;}
+/* HUD */
+.hud{display:flex;gap:8px;margin-bottom:11px;}
+.hud-card{flex:1;background:var(--card);border:1px solid var(--border);border-radius:13px;padding:9px 10px;text-align:center;}
 .hud-label{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:1px;}
-.hud-value{font-family:'Fredoka One',cursive;font-size:21px;color:var(--text);}
-.hud-card.hs .hud-value{color:var(--gold);}
-.hud-card.hl .hud-value{color:var(--green);}
+.hud-value{font-family:'Fredoka One',cursive;font-size:20px;color:var(--text);}
+.hud-card.hs .hud-value{color:var(--gold);}.hud-card.hl .hud-value{color:var(--green);}
 
-/* ── PROGRESS ── */
-.prog-wrap{margin-bottom:12px;}
-.prog-top{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:5px;}
+/* PROGRESS */
+.prog-wrap{margin-bottom:11px;}
+.prog-top{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:4px;}
 .prog-bg{height:7px;background:var(--border);border-radius:10px;overflow:hidden;margin-bottom:7px;}
-.prog-fill{height:100%;background:linear-gradient(90deg,#2ecc71,#f1c40f,#e74c3c,#9b59b6);
-  border-radius:10px;transition:width .5s ease;}
+.prog-fill{height:100%;background:linear-gradient(90deg,#2ecc71,#f1c40f,#e74c3c,#9b59b6);border-radius:10px;transition:width .5s ease;}
 .prog-dots{display:flex;gap:3px;justify-content:center;flex-wrap:wrap;}
-.pdot{width:8px;height:8px;border-radius:50%;background:var(--border);
-  border:1.5px solid var(--border2);transition:all .3s;}
-.pdot.done{background:#2ecc71;border-color:#2ecc71;}
-.pdot.current{background:#f1c40f;border-color:#f1c40f;box-shadow:0 0 6px #f1c40f;}
+.pdot{width:8px;height:8px;border-radius:50%;background:var(--border);border:1.5px solid var(--border2);transition:all .3s;}
+.pdot.done{background:#2ecc71;border-color:#2ecc71;}.pdot.current{background:#f1c40f;border-color:#f1c40f;box-shadow:0 0 6px #f1c40f;}
 
-/* ── QUESTION CARD ── */
-.qcard{background:var(--card);border:1px solid var(--border);border-radius:20px;
-  padding:20px 20px 18px;margin-bottom:12px;transition:border-color .3s,box-shadow .3s;}
+/* QUESTION CARD */
+.qcard{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:18px 18px 16px;margin-bottom:12px;transition:border-color .3s,box-shadow .3s;}
 .qcard.ok{border-color:#2ecc71;box-shadow:0 0 22px rgba(46,204,113,.18);}
 .qcard.ko{border-color:#e74c3c;box-shadow:0 0 22px rgba(231,76,60,.18);}
-.qcard-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
-.lvl-badge{font-size:11px;font-weight:800;text-transform:uppercase;
-  letter-spacing:.07em;padding:4px 12px;border-radius:30px;}
+.qcard-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+.lvl-badge{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;padding:4px 12px;border-radius:30px;}
 .lb-f{background:rgba(46,204,113,.15);color:#2ecc71;border:1px solid rgba(46,204,113,.3);}
 .lb-m{background:rgba(243,156,18,.15);color:#f39c12;border:1px solid rgba(243,156,18,.3);}
 .lb-d{background:rgba(231,76,60,.15);color:#e74c3c;border:1px solid rgba(231,76,60,.3);}
 .lb-i{background:rgba(155,89,182,.15);color:#9b59b6;border:1px solid rgba(155,89,182,.3);}
-.tipo-tag{font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;
-  background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border);}
-
-.eq{font-family:'Fredoka One',cursive;font-size:30px;text-align:center;
-  color:var(--text);line-height:1.45;margin-bottom:4px;
-  animation:popIn .4s cubic-bezier(.175,.885,.32,1.275);}
+.tipo-tag{font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border);}
+.eq{font-family:'Fredoka One',cursive;font-size:26px;text-align:center;color:var(--text);line-height:1.5;margin-bottom:4px;animation:popIn .4s cubic-bezier(.175,.885,.32,1.275);word-break:break-word;}
 @keyframes popIn{from{transform:scale(.84);opacity:0}to{transform:scale(1);opacity:1}}
-.clue{font-size:13px;color:var(--muted);text-align:center;font-style:italic;
-  min-height:18px;margin-bottom:10px;}
-.divider{height:1px;background:var(--border);margin:12px 0;}
-.pergunta{font-size:17px;font-weight:700;text-align:center;color:var(--text);}
+.clue{font-size:12px;color:var(--muted);text-align:center;font-style:italic;min-height:16px;margin-bottom:9px;}
+.divider{height:1px;background:var(--border);margin:11px 0;}
+.pergunta{font-size:16px;font-weight:700;text-align:center;color:var(--text);}
 
-/* ── OPTIONS ── */
-.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.opt-btn{font-family:'Fredoka One',cursive;font-size:22px;font-weight:400;
-  padding:18px 10px;border-radius:15px;border:2px solid var(--border);
-  background:var(--card);color:var(--text);cursor:pointer;word-break:break-all;
-  transition:transform .13s,border-color .13s,background .13s,box-shadow .13s;}
-.opt-btn:hover:not(:disabled){transform:translateY(-3px) scale(1.03);
-  border-color:var(--border2);box-shadow:0 8px 22px rgba(0,0,0,.3);}
+/* OPTIONS */
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:9px;}
+.opt-btn{font-family:'Fredoka One',cursive;font-size:21px;font-weight:400;padding:17px 8px;border-radius:14px;border:2px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;word-break:break-all;transition:transform .13s,border-color .13s,background .13s,box-shadow .13s;}
+.opt-btn:hover:not(:disabled){transform:translateY(-3px) scale(1.03);border-color:var(--border2);box-shadow:0 8px 22px rgba(0,0,0,.3);}
 .opt-btn:disabled{cursor:default;}
-.opt-btn.correct{background:rgba(46,204,113,.13);border-color:#2ecc71;color:#2ecc71;
-  box-shadow:0 0 16px rgba(46,204,113,.22);animation:pulse .35s ease;}
-.opt-btn.wrong{background:rgba(231,76,60,.1);border-color:#e74c3c;color:#e74c3c;
-  animation:shake .35s ease;}
+.opt-btn.correct{background:rgba(46,204,113,.13);border-color:#2ecc71;color:#2ecc71;box-shadow:0 0 16px rgba(46,204,113,.22);animation:pulse .35s ease;}
+.opt-btn.wrong{background:rgba(231,76,60,.1);border-color:#e74c3c;color:#e74c3c;animation:shake .35s ease;}
 @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.06)}100%{transform:scale(1)}}
 @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
 
-/* ── FEEDBACK ── */
-.feedback{display:flex;align-items:center;justify-content:center;
-  min-height:40px;font-size:14px;font-weight:700;border-radius:12px;
-  padding:9px 14px;margin-top:10px;transition:all .3s;text-align:center;}
+/* FEEDBACK */
+.feedback{display:flex;align-items:center;justify-content:center;min-height:38px;font-size:14px;font-weight:700;border-radius:12px;padding:8px 12px;margin-top:9px;transition:all .3s;text-align:center;}
 .feedback.ok{background:rgba(46,204,113,.1);color:#2ecc71;border:1px solid rgba(46,204,113,.25);}
 .feedback.ko{background:rgba(231,76,60,.1);color:#e74c3c;border:1px solid rgba(231,76,60,.25);}
 .feedback.empty{background:transparent;border:1px solid transparent;}
 
-/* ── TOAST ── */
-.toast{position:fixed;top:50%;left:50%;
-  transform:translate(-50%,-50%) scale(.6);
-  background:linear-gradient(145deg,#192130,#0d1821);
-  border:2px solid var(--gold);border-radius:24px;padding:28px 42px;
-  text-align:center;z-index:200;
-  box-shadow:0 20px 60px rgba(0,0,0,.7),0 0 40px rgba(241,196,15,.18);
-  opacity:0;pointer-events:none;transition:all .4s cubic-bezier(.175,.885,.32,1.275);}
+/* TOAST */
+.toast{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(.6);background:linear-gradient(145deg,#192130,#0d1821);border:2px solid var(--gold);border-radius:24px;padding:26px 40px;text-align:center;z-index:200;box-shadow:0 20px 60px rgba(0,0,0,.7),0 0 40px rgba(241,196,15,.18);opacity:0;pointer-events:none;transition:all .4s cubic-bezier(.175,.885,.32,1.275);}
 .toast.show{opacity:1;transform:translate(-50%,-50%) scale(1);pointer-events:all;}
-.t-ico{font-size:48px;display:block;margin-bottom:8px;}
-.t-title{font-family:'Fredoka One',cursive;font-size:24px;color:var(--gold);}
-.t-sub{font-size:13px;color:var(--muted);margin-top:5px;}
+.t-ico{font-size:46px;display:block;margin-bottom:7px;}
+.t-title{font-family:'Fredoka One',cursive;font-size:22px;color:var(--gold);}
+.t-sub{font-size:12px;color:var(--muted);margin-top:5px;}
 
-/* ── COMBO ── */
-.combo-badge{position:fixed;top:16px;right:16px;
-  font-family:'Fredoka One',cursive;font-size:17px;
-  background:rgba(241,196,15,.14);border:1px solid rgba(241,196,15,.35);
-  border-radius:30px;padding:6px 16px;color:var(--gold);z-index:150;
-  opacity:0;transform:scale(.8);transition:all .3s;}
+/* COMBO */
+.combo-badge{position:fixed;top:14px;right:14px;font-family:'Fredoka One',cursive;font-size:16px;background:rgba(241,196,15,.14);border:1px solid rgba(241,196,15,.35);border-radius:30px;padding:5px 14px;color:var(--gold);z-index:150;opacity:0;transform:scale(.8);transition:all .3s;}
 .combo-badge.show{opacity:1;transform:scale(1);}
 
-/* ── END SCREEN ── */
-.end-card{background:var(--card);border:1px solid var(--border);
-  border-radius:24px;padding:34px 26px;text-align:center;}
-.end-trophy{font-size:66px;display:block;margin-bottom:10px;animation:bob 2s ease-in-out infinite;}
-.end-title{font-family:'Fredoka One',cursive;font-size:26px;color:var(--text);}
-.end-class{font-family:'Fredoka One',cursive;font-size:17px;color:var(--gold);margin:4px 0 16px;}
-.score-box{background:rgba(241,196,15,.07);border:1px solid rgba(241,196,15,.22);
-  border-radius:16px;padding:16px;margin-bottom:16px;}
-.score-box .snum{font-family:'Fredoka One',cursive;font-size:48px;color:var(--gold);line-height:1;}
-.score-box .slbl{font-size:12px;color:var(--muted);margin-top:3px;}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:18px;}
-.stat-item{background:rgba(255,255,255,.03);border:1px solid var(--border);
-  border-radius:12px;padding:10px 6px;text-align:center;font-size:11px;color:var(--muted);line-height:1.6;}
-.stat-item strong{display:block;font-family:'Fredoka One',cursive;font-size:19px;color:var(--text);}
-.btn-restart{width:100%;font-family:'Fredoka One',cursive;font-size:18px;font-weight:400;
-  padding:14px;border-radius:15px;border:2px solid var(--border);
-  background:transparent;color:var(--text);cursor:pointer;transition:all .2s;}
+/* END */
+.end-card{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:32px 24px;text-align:center;}
+.end-trophy{font-size:64px;display:block;margin-bottom:9px;animation:bob 2s ease-in-out infinite;}
+.end-title{font-family:'Fredoka One',cursive;font-size:25px;color:var(--text);}
+.end-class{font-family:'Fredoka One',cursive;font-size:16px;color:var(--gold);margin:4px 0 14px;}
+.score-box{background:rgba(241,196,15,.07);border:1px solid rgba(241,196,15,.22);border-radius:16px;padding:14px;margin-bottom:14px;}
+.score-box .snum{font-family:'Fredoka One',cursive;font-size:46px;color:var(--gold);line-height:1;}
+.score-box .slbl{font-size:12px;color:var(--muted);margin-top:2px;}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:16px;}
+.stat-item{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;padding:9px 4px;text-align:center;font-size:11px;color:var(--muted);line-height:1.6;}
+.stat-item strong{display:block;font-family:'Fredoka One',cursive;font-size:18px;color:var(--text);}
+.btn-restart{width:100%;font-family:'Fredoka One',cursive;font-size:17px;font-weight:400;padding:13px;border-radius:15px;border:2px solid var(--border);background:transparent;color:var(--text);cursor:pointer;transition:all .2s;}
 .btn-restart:hover{background:rgba(255,255,255,.04);border-color:var(--border2);}
 </style>
 </head>
 <body>
-
 <div class="stars" id="stars"></div>
-<div class="toast" id="toast">
-  <span class="t-ico" id="t-ico">🎉</span>
-  <div class="t-title" id="t-title">Novo nível!</div>
-  <div class="t-sub" id="t-sub">Próximo desafio em instantes...</div>
-</div>
+<div class="toast" id="toast"><span class="t-ico" id="t-ico">🎉</span><div class="t-title" id="t-title">Novo nível!</div><div class="t-sub" id="t-sub"></div></div>
 <div class="combo-badge" id="combo">🔥 Combo ×<span id="combo-n">3</span></div>
-
 <div class="wrap">
 
   <!-- MENU -->
@@ -198,7 +126,7 @@ body::before{content:'';position:fixed;inset:0;background:
     <div class="logo">
       <span class="logo-row">🍇🍎🍐🍌🍓🍊</span>
       <h1>Desafio Matemático<br>das Frutas</h1>
-      <p>60 níveis · 5 questões · 6º ano EF · As frutas são as variáveis!</p>
+      <p>60 níveis · 5 questões · 6º ano EF · Frutas = variáveis · Sem repetições!</p>
     </div>
     <div class="ops-grid">
       <div class="op-chip cd"><span class="icon">0,5</span>Decimal</div>
@@ -209,17 +137,18 @@ body::before{content:'';position:fixed;inset:0;background:
       <div class="op-chip ce"><span class="icon">∑</span>Expressão</div>
     </div>
     <div class="tiers">
-      <div class="tier-chip tc-f">🌱 Fácil<br><small style="font-weight:400;font-size:10px">Níveis 1–10</small></div>
-      <div class="tier-chip tc-m">🌿 Médio<br><small style="font-weight:400;font-size:10px">Níveis 11–27</small></div>
-      <div class="tier-chip tc-d">🔥 Difícil<br><small style="font-weight:400;font-size:10px">Níveis 28–44</small></div>
-      <div class="tier-chip tc-i">💀 Impossível<br><small style="font-weight:400;font-size:10px">Níveis 45–60</small></div>
+      <div class="tier-chip tc-f">🌱 Fácil<br><small style="font-weight:400;font-size:10px">Níveis 1–10<br>1 fruta incógnita</small></div>
+      <div class="tier-chip tc-m">🌿 Médio<br><small style="font-weight:400;font-size:10px">Níveis 11–27<br>Parênteses · dec×fração</small></div>
+      <div class="tier-chip tc-d">🔥 Difícil<br><small style="font-weight:400;font-size:10px">Níveis 28–44<br>4–5 termos mistos</small></div>
+      <div class="tier-chip tc-i">💀 Impossível<br><small style="font-weight:400;font-size:10px">Níveis 45–60<br>Fração + decimal</small></div>
     </div>
     <div class="rules-card">
-      <strong>Como jogar</strong>
+      <strong>Como jogar</strong><div class="sep"></div>
+      As <strong>frutas são variáveis</strong> — descubra o valor delas ou calcule o resultado!<br>
+      Médio: parênteses, fração × decimal. Difícil: 4–5 termos mistos com potência e divisão.<br>
+      Impossível: fração e decimal na mesma expressão. <strong>Nenhuma questão se repete!</strong><br>
       <div class="sep"></div>
-      As <strong>frutas são variáveis</strong> — descubra o valor delas para resolver cada equação!<br>
-      Nos níveis fáceis: 1 fruta incógnita. Nos avançados: 2 ou 3 frutas com pistas.<br>
-      <strong>5 questões por nível</strong> · Acerto: <strong>+10 × nível pts</strong> · Combo de 3: <strong>+50 bônus</strong>
+      Acerto: <strong>+10 × nível pts</strong> &nbsp;|&nbsp; Combo de 3: <strong>+50 bônus</strong>
     </div>
     <button class="btn-start" onclick="startGame()">🚀 Iniciar o Desafio!</button>
   </div>
@@ -256,10 +185,7 @@ body::before{content:'';position:fixed;inset:0;background:
       <span class="end-trophy" id="e-trophy">🏆</span>
       <div class="end-title">Desafio Concluído!</div>
       <div class="end-class" id="e-class">Mestre da Matemática!</div>
-      <div class="score-box">
-        <div class="snum" id="e-score">0</div>
-        <div class="slbl">pontos conquistados</div>
-      </div>
+      <div class="score-box"><div class="snum" id="e-score">0</div><div class="slbl">pontos conquistados</div></div>
       <div class="stats-grid">
         <div class="stat-item"><strong id="st-ac">0</strong>acertos</div>
         <div class="stat-item"><strong id="st-er">0</strong>erros</div>
@@ -272,243 +198,136 @@ body::before{content:'';position:fixed;inset:0;background:
 </div>
 
 <script>
-// ── ESTRELAS ──
-(function(){
-  const el=document.getElementById('stars');
-  for(let i=0;i<90;i++){
-    const s=document.createElement('div');s.className='star';
-    const big=Math.random()>.75;
-    s.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;--d:${2+Math.random()*4}s;--dl:${Math.random()*4}s;${big?'width:3px;height:3px':''}`;
-    el.appendChild(s);
-  }
-})();
+// ESTRELAS
+(function(){const el=document.getElementById('stars');for(let i=0;i<90;i++){const s=document.createElement('div');s.className='star';s.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;--d:${2+Math.random()*4}s;--dl:${Math.random()*4}s;${Math.random()>.75?'width:3px;height:3px':''}`;el.appendChild(s);}})();
 
-// ── CONFIG ──
+// CONFIG
 const DENOMS=[2,3,4,5,6,7,8,9,10,12,15,16,18,20,24,25,30,32,36,50];
 const FRUTAS=['🍇','🍎','🍐','🍌','🍓','🍊'];
 const SUP=['','','²','³','⁴','⁵','⁶'];
 const TIPO_NOMES={decimal:'Decimal',fracao:'Fração',mult:'Multiplicação',div:'Divisão',pot:'Potência',expr:'Expressão'};
 
-// ── UTILITÁRIOS ──
+// UTILS
 function rnd(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
 function rndArr(a){return a[Math.floor(Math.random()*a.length)];}
 function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
 function mdc(a,b){a=Math.abs(a);b=Math.abs(b);while(b){[a,b]=[b,a%b];}return a;}
 function simplify(n,d){const g=mdc(Math.abs(n),Math.abs(d)||1);return[n/g,d/g];}
-function fmtFrac(n,d){
-  const[sn,sd]=simplify(n,d);
-  if(sd===1)return`${sn}`;
-  if(sn<0)return`−${Math.abs(sn)}/${sd}`;
-  return`${sn}/${sd}`;
-}
+function fmtFrac(n,d){const[sn,sd]=simplify(n,d);if(sd===1)return`${sn}`;if(sn<0)return`−${Math.abs(sn)}/${sd}`;return`${sn}/${sd}`;}
 function fmtDec(v,c=1){return parseFloat(v.toFixed(c)).toString().replace('.',',');}
 function getTier(n){if(n<=10)return'facil';if(n<=27)return'medio';if(n<=44)return'dificil';return'impossivel';}
-
-// Frutas distintas
 function f1(){return rndArr(FRUTAS);}
 function f2(){const a=rndArr(FRUTAS);let b;do{b=rndArr(FRUTAS);}while(b===a);return[a,b];}
 function f3(){const a=rndArr(FRUTAS);let b,c;do{b=rndArr(FRUTAS);}while(b===a);do{c=rndArr(FRUTAS);}while(c===a||c===b);return[a,b,c];}
 
-// ── GERADORES ──
+// ══════════════════════════════════
+// FÁCIL — 1 fruta incógnita
+// ══════════════════════════════════
+const FACIL_GENS=[
+  ()=>{const fa=f1(),b=rnd(1,7)/10,soma=parseFloat((b+rnd(1,7)/10).toFixed(1));const a=parseFloat((soma-b).toFixed(1));if(a<=0||a>=1)return null;return{eq:`${fa} + ${fmtDec(b)} = ${fmtDec(soma)}`,clue:'',pergunta:`Quanto vale ${fa}?`,ans:fmtDec(a),ansN:a,tipo:'decimal'};},
+  ()=>{const fa=f1(),k=rnd(1,4)/10,res=rnd(2,7)/10;const a=parseFloat((res+k).toFixed(1));if(a>=1)return null;return{eq:`${fa} − ${fmtDec(k)} = ${fmtDec(res)}`,clue:'',pergunta:`Quanto vale ${fa}?`,ans:fmtDec(a),ansN:a,tipo:'decimal'};},
+  ()=>{const fa=f1(),d=rndArr(DENOMS.slice(0,6)),n2=rnd(1,d-1),soma_n=rnd(n2+1,d+2);const[sn,sd]=simplify(soma_n-n2,d);return{eq:`${fa} + ${n2}/${d} = ${fmtFrac(soma_n,d)}`,clue:'denominadores iguais',pergunta:`Quanto vale ${fa}?`,ans:fmtFrac(sn,sd),ansN:sn/sd,tipo:'fracao'};},
+  ()=>{const fa=f1(),d=rndArr(DENOMS.slice(0,6)),n2=rnd(1,d-2),res_n=rnd(1,d-n2-1);if(res_n<=0)return null;const[sn,sd]=simplify(res_n+n2,d);return{eq:`${fa} − ${n2}/${d} = ${fmtFrac(res_n,d)}`,clue:'denominadores iguais',pergunta:`Quanto vale ${fa}?`,ans:fmtFrac(sn,sd),ansN:sn/sd,tipo:'fracao'};},
+  ()=>{const fa=f1(),b=rnd(2,5),a=rnd(2,5);return{eq:`${fa} × ${b} = ${a*b}`,clue:'',pergunta:`Quanto vale ${fa}?`,ans:`${a}`,ansN:a,tipo:'mult'};},
+  ()=>{const fa=f1(),b=rnd(2,5),a=rnd(2,5);return{eq:`${b} × ${fa} = ${a*b}`,clue:'',pergunta:`Quanto vale ${fa}?`,ans:`${a}`,ansN:a,tipo:'mult'};},
+  ()=>{const fa=f1(),d=rnd(2,5),q=rnd(2,6);return{eq:`${fa} ÷ ${d} = ${q}`,clue:'resultado exato',pergunta:`Quanto vale ${fa}?`,ans:`${d*q}`,ansN:d*q,tipo:'div'};},
+  ()=>{const fa=f1(),q=rnd(2,5),a=rnd(2,5);return{eq:`${q*a} ÷ ${fa} = ${q}`,clue:'resultado exato',pergunta:`Quanto vale ${fa}?`,ans:`${a}`,ansN:a,tipo:'div'};},
+  ()=>{const fa=f1(),a=rnd(2,5),e=rnd(2,3);return{eq:`${fa}${SUP[e]} = ${Math.pow(a,e)}`,clue:'qual é a base?',pergunta:`Quanto vale ${fa}?`,ans:`${a}`,ansN:a,tipo:'pot'};},
+  ()=>{const fa=f1(),a=rnd(2,4),k=rnd(1,5),pot=Math.pow(a,2);return{eq:`${fa}² + ${k} = ${pot+k}`,clue:'',pergunta:`Quanto vale ${fa}?`,ans:`${a}`,ansN:a,tipo:'pot'};},
+];
 
-function gerarDecimal(tier){
-  if(tier==='facil'){
-    const fa=f1();
-    const b=rnd(1,7)/10, soma=rnd(b*10+1,9)/10;
-    const a=parseFloat((soma-b).toFixed(1));
-    if(a<=0||a>=1)return gerarDecimal(tier);
-    return{eq:`${fa} + ${fmtDec(b)} = ${fmtDec(soma)}`,clue:'',pergunta:`Quanto vale ${fa}?`,ans:fmtDec(a),ansN:a,tipo:'decimal'};
-  }
-  if(tier==='medio'){
-    const[fa,fb]=f2();
-    const va=rnd(1,9)/10, vb=rnd(1,9)/10, soma=parseFloat((va+vb).toFixed(1));
-    return{eq:`${fa} + ${fb} = ${fmtDec(soma)}`,clue:`(${fa} = ${fmtDec(va)})`,pergunta:`Quanto vale ${fb}?`,ans:fmtDec(vb),ansN:vb,tipo:'decimal'};
-  }
-  if(tier==='dificil'){
-    const[fa,fb]=f2();
-    const va=rnd(10,40)/10, vb=rnd(10,40)/10;
-    const op=rnd(0,1)?'+':'−';
-    const soma=op==='+'?parseFloat((va+vb).toFixed(1)):parseFloat((va-vb).toFixed(1));
-    if(soma<=0)return gerarDecimal(tier);
-    return{eq:`${fa} ${op} ${fb} = ${fmtDec(soma,1)}`,clue:`(${fa} = ${fmtDec(va,1)})`,pergunta:`Quanto vale ${fb}?`,ans:fmtDec(vb,1),ansN:vb,tipo:'decimal'};
-  }
-  const[fa,fb,fc]=f3();
-  const va=rnd(10,30)/10, vb=rnd(5,20)/100;
-  const k=rnd(1,9)/10;
-  const vc=parseFloat((va+vb-k).toFixed(2));
-  if(vc<=0)return gerarDecimal(tier);
-  return{eq:`${fa} + ${fb} − ${fmtDec(k,1)} = ${fmtDec(vc,2)}`,clue:`(${fa}=${fmtDec(va,1)}, ${fb}=${fmtDec(vb,2)})`,pergunta:`Qual é o resultado?`,ans:fmtDec(vc,2),ansN:vc,tipo:'decimal'};
-}
+// ══════════════════════════════════
+// MÉDIO — parênteses, decimal×fração, 2 frutas com pista
+// ══════════════════════════════════
+const MEDIO_GENS=[
+  ()=>{const fa=f1(),va=rnd(1,7)/10,k=rnd(1,4)/10,m=rnd(2,4);const res=parseFloat(((va+k)*m).toFixed(2));return{eq:`(${fa} + ${fmtDec(k)}) × ${m} = ${fmtDec(res,2)}`,clue:'resolva os parênteses primeiro',pergunta:`Quanto vale ${fa}?`,ans:fmtDec(va),ansN:va,tipo:'decimal'};},
+  ()=>{const fa=f1(),va=rnd(1,8)/10,m=rnd(2,5),k=rnd(1,8)/10;const res=parseFloat((va*m+k).toFixed(2));return{eq:`${fa} × ${m} + ${fmtDec(k)} = ${fmtDec(res,2)}`,clue:'multiplicação antes da soma',pergunta:`Quanto vale ${fa}?`,ans:fmtDec(va),ansN:va,tipo:'decimal'};},
+  ()=>{const fa=f1(),va=rnd(3,9)/10,k=rnd(1,Math.floor(va*10)-1)/10,m=rnd(2,4);const diff=parseFloat((va-k).toFixed(1));if(diff<=0)return null;const res=parseFloat((diff*m).toFixed(2));return{eq:`${m} × (${fa} − ${fmtDec(k)}) = ${fmtDec(res,2)}`,clue:'resolva os parênteses primeiro',pergunta:`Quanto vale ${fa}?`,ans:fmtDec(va),ansN:va,tipo:'decimal'};},
+  ()=>{const[fa,fb]=f2(),d1=rndArr(DENOMS.slice(0,8)),d2=rndArr(DENOMS.slice(0,8)),n1=rnd(1,d1-1),n2=rnd(1,d2-1);const nr=n1*d2+n2*d1,dr=d1*d2;const[sn,sd]=simplify(nr,dr);return{eq:`${fa} + ${fb} = ${fmtFrac(sn,sd)}`,clue:`(${fa} = ${n1}/${d1}) — use MMC`,pergunta:`Quanto vale ${fb}?`,ans:fmtFrac(n2,d2),ansN:n2/d2,tipo:'fracao'};},
+  ()=>{const fa=f1(),d=rndArr(DENOMS.slice(0,8)),n=rnd(1,d-1),m=rnd(2,5);const[sn,sd]=simplify(n*m,d);return{eq:`(${fa}/${d}) × ${m} = ?`,clue:`(${fa} = ${n})`,pergunta:`Qual é o resultado?`,ans:fmtFrac(sn,sd),ansN:sn/sd,tipo:'fracao'};},
+  ()=>{const fa=f1(),d=rndArr(DENOMS.slice(0,8)),n=rnd(1,d-1),m=rnd(2,4);const[sn,sd]=simplify(n,d*m);return{eq:`(${fa}/${d}) ÷ ${m} = ?`,clue:`(${fa} = ${n})`,pergunta:`Qual é o resultado?`,ans:fmtFrac(sn,sd),ansN:sn/sd,tipo:'fracao'};},
+  ()=>{const fa=f1(),va=rnd(2,8),d=rndArr([2,4,5,10]),n=rnd(1,d-1);const res=parseFloat((va*n/d).toFixed(2));return{eq:`${fa} × (${n}/${d}) = ${fmtDec(res,2)}`,clue:`(${fa} = ${va})`,pergunta:`Qual é o resultado?`,ans:fmtDec(res,2),ansN:res,tipo:'decimal'};},
+  ()=>{const fa=f1(),va=rnd(2,6),k=rnd(1,4),m=rnd(2,5),j=rnd(1,3);const res=(va+k)*(m+j);return{eq:`(${fa} + ${k}) × (${m} + ${j}) = ${res}`,clue:`(${fa} = ${va})`,pergunta:`Qual é o resultado?`,ans:`${res}`,ansN:res,tipo:'mult'};},
+  ()=>{const fa=f1(),va=rnd(1,5),k=rnd(1,3),e=rnd(2,3),res=Math.pow(va+k,e);return{eq:`(${fa} + ${k})${SUP[e]} = ${res}`,clue:`(${fa} = ${va})`,pergunta:`Qual é o resultado?`,ans:`${res}`,ansN:res,tipo:'pot'};},
+  ()=>{const[fa,fb]=f2(),va=rnd(2,8),vb=rnd(2,6),k=rnd(1,4);const res=va*(vb+k);return{eq:`${fa} × (${fb} + ${k}) = ${res}`,clue:`(${fa} = ${va})`,pergunta:`Quanto vale ${fb}?`,ans:`${vb}`,ansN:vb,tipo:'expr'};},
+  ()=>{const[fa,fb]=f2(),va=rnd(2,7),vb=rnd(3,8),k=rnd(1,3);const res=va*vb-k*va;if(res<=0)return null;return{eq:`${fa} × ${fb} − ${k} × ${fa} = ${res}`,clue:`(${fa} = ${va})`,pergunta:`Quanto vale ${fb}?`,ans:`${vb}`,ansN:vb,tipo:'expr'};},
+  ()=>{const[fa,fb]=f2(),d1=rndArr(DENOMS.slice(0,8)),d2=rndArr(DENOMS.slice(0,8)),n1=rnd(1,d1-1),n2=rnd(1,d2);const nr=n1*d2-n2*d1,dr=d1*d2;const[sn,sd]=simplify(nr,dr);return{eq:`${fa} − ${fb} = ${fmtFrac(Math.abs(sn),sd)}`,clue:`(${fa} = ${n1}/${d1}) — atenção ao sinal`,pergunta:`Quanto vale ${fb}?`,ans:fmtFrac(n2,d2),ansN:n2/d2,tipo:'fracao'};},
+  ()=>{const[fa,fb]=f2(),va=rnd(3,9),vb=rnd(3,8);return{eq:`${fa} × ${fb} = ${va*vb}`,clue:`(${fa} = ${va})`,pergunta:`Quanto vale ${fb}?`,ans:`${vb}`,ansN:vb,tipo:'mult'};},
+];
 
-function gerarFracao(tier){
-  if(tier==='facil'){
-    const fa=f1();
-    const d=rndArr(DENOMS.slice(0,6));
-    const n2=rnd(1,d-1), soma_n=rnd(n2+1,d+n2);
-    const ansN_val=soma_n-n2;
-    const[sn,sd]=simplify(ansN_val,d);
-    return{eq:`${fa} + ${n2}/${d} = ${fmtFrac(soma_n,d)}`,clue:'denominadores iguais',pergunta:`Quanto vale ${fa}?`,ans:fmtFrac(sn,sd),ansN:sn/sd,tipo:'fracao'};
-  }
-  if(tier==='medio'){
-    const[fa,fb]=f2();
-    const d1=rndArr(DENOMS.slice(0,8)), d2=rndArr(DENOMS.slice(0,8));
-    const n1=rnd(1,d1-1), n2=rnd(1,d2-1);
-    const nr=n1*d2+n2*d1, dr=d1*d2;
-    const[sn,sd]=simplify(nr,dr);
-    return{eq:`${fa} + ${fb} = ${fmtFrac(sn,sd)}`,clue:`(${fa} = ${n1}/${d1})`,pergunta:`Quanto vale ${fb}?`,ans:fmtFrac(n2,d2),ansN:n2/d2,tipo:'fracao'};
-  }
-  if(tier==='dificil'){
-    const[fa,fb]=f2();
-    const d1=rndArr(DENOMS), d2=rndArr(DENOMS);
-    const n1=rnd(1,d1), n2=rnd(1,d2);
-    const nr=n1*d2-n2*d1, dr=d1*d2;
-    const[sn,sd]=simplify(nr,dr);
-    return{eq:`${fa} − ${fb} = ${fmtFrac(sn,sd)}`,clue:`(${fa} = ${n1}/${d1})`,pergunta:`Quanto vale ${fb}?`,ans:fmtFrac(n2,d2),ansN:n2/d2,tipo:'fracao'};
-  }
-  const[fa,fb,fc]=f3();
-  const d1=rndArr(DENOMS), d2=rndArr(DENOMS), d3=rndArr(DENOMS);
-  const n1=rnd(1,d1), n2=rnd(1,d2), n3=rnd(1,d3);
-  const mcm=d1*d2*d3;
-  const nr=n1*(d2*d3)-n2*(d1*d3)+n3*(d1*d2);
-  const[sn,sd]=simplify(nr,mcm);
-  return{eq:`${fa}/${d1} − ${fb}/${d2} + ${fc}/${d3} = ?`,clue:`(${fa}=${n1}, ${fb}=${n2}, ${fc}=${n3})`,pergunta:`Qual é o resultado?`,ans:fmtFrac(sn,sd),ansN:sn/sd,tipo:'fracao'};
-}
+// ══════════════════════════════════
+// DIFÍCIL — 4-5 termos, operações mistas
+// ══════════════════════════════════
+const DIFICIL_GENS=[
+  ()=>{const[fa,fb]=f2(),va=rnd(3,8),vb=rnd(6,20),k=rnd(2,5),m=rnd(2,4),n=rnd(1,5);if(vb%m!==0)return null;const res=va*k+vb/m-n;if(res<=0)return null;return{eq:`${fa} × ${k} + ${fb} ÷ ${m} − ${n} = ${res}`,clue:`(${fa}=${va}, ${fb}=${vb})`,pergunta:`Qual é o resultado?`,ans:`${res}`,ansN:res,tipo:'expr'};},
+  ()=>{const[fa,fb,fc]=f3(),va=rnd(2,5),vb=rnd(2,6),vc=rnd(4,12),k=rnd(2,4),m=rnd(2,3),n=rnd(1,5);if(vc%m!==0)return null;const res=Math.pow(va,2)+vb*k-vc/m+n;if(res<=0)return null;return{eq:`${fa}² + ${fb} × ${k} − ${fc} ÷ ${m} + ${n} = ${res}`,clue:`(${fa}=${va}, ${fb}=${vb}, ${fc}=${vc})`,pergunta:`Qual é o resultado?`,ans:`${res}`,ansN:res,tipo:'expr'};},
+  ()=>{const[fa,fb]=f2(),va=rnd(2,7),vb=rnd(2,5),d=rndArr(DENOMS.slice(0,6)),n1=rnd(1,d-1),k=rnd(2,4),m=rnd(1,4);const raw=va+n1/d+vb*k-m;if(raw<=0)return null;const res=parseFloat(raw.toFixed(2));return{eq:`${fa} + ${n1}/${d} + ${fb} × ${k} − ${m} = ${fmtDec(res,2)}`,clue:`(${fa}=${va}, ${fb}=${vb})`,pergunta:`Qual é o resultado?`,ans:fmtDec(res,2),ansN:res,tipo:'expr'};},
+  ()=>{const[fa,fb,fc]=f3(),va=rnd(2,4),vb=rnd(2,4),vc=rnd(2,5),k=rnd(2,3),m=rnd(4,12),n=rnd(2,3),j=rnd(1,5);if(m%n!==0)return null;const res=Math.pow(va,3)-Math.pow(vb,2)+vc*k-m/n+j;if(res<=0||!Number.isInteger(res))return null;return{eq:`${fa}³ − ${fb}² + ${fc} × ${k} − ${m} ÷ ${n} + ${j} = ${res}`,clue:`(${fa}=${va}, ${fb}=${vb}, ${fc}=${vc})`,pergunta:`Qual é o resultado?`,ans:`${res}`,ansN:res,tipo:'expr'};},
+  ()=>{const[fa,fb]=f2(),va=rnd(3,7),vb=rnd(1,5),k=rnd(2,4),d=rndArr(DENOMS.slice(0,5)),n=rnd(1,d-1),pot=Math.pow(va,2);if(pot%k!==0)return null;const raw=pot/k+n/d-vb;if(raw<=0)return null;const[sn,sd]=simplify(Math.round(raw*d*k),d*k);return{eq:`${fa}² ÷ ${k} + ${n}/${d} − ${fb} = ${fmtFrac(sn,sd)}`,clue:`(${fa}=${va}, ${fb}=${vb})`,pergunta:`Qual é o resultado?`,ans:fmtFrac(sn,sd),ansN:sn/sd,tipo:'expr'};},
+  ()=>{const[fa,fb,fc]=f3(),va=rnd(2,7),vb=rnd(2,6),vc=rnd(2,4),k=rnd(2,4);const res=(va+vb)*k-Math.pow(vc,2);if(res<=0)return null;return{eq:`(${fa} + ${fb}) × ${k} − ${fc}² = ${res}`,clue:`(${fa}=${va}, ${fb}=${vb}, ${fc}=${vc})`,pergunta:`Qual é o resultado?`,ans:`${res}`,ansN:res,tipo:'expr'};},
+  ()=>{const[fa,fb,fc]=f3(),va=rnd(2,6),vb=rnd(4,10),vc=rnd(1,5),k=rnd(2,4),m=rnd(2,3),dec=rnd(1,9)/10;if(vb%m!==0)return null;const raw=va*k+dec-vb/m+vc;if(raw<=0)return null;const res=parseFloat(raw.toFixed(1));return{eq:`${fa} × ${k} + ${fmtDec(dec)} − ${fb} ÷ ${m} + ${fc} = ${fmtDec(res,1)}`,clue:`(${fa}=${va}, ${fb}=${vb}, ${fc}=${vc})`,pergunta:`Qual é o resultado?`,ans:fmtDec(res,1),ansN:res,tipo:'expr'};},
+  ()=>{const[fa,fb]=f2(),va=rnd(3,7),vb=rnd(2,5),k=rnd(1,4),m=rnd(2,3),n=rnd(2,4);const pot=Math.pow(va,2);if((pot-k)%m!==0)return null;const res=(pot-k)/m+vb*n;if(res<=0)return null;return{eq:`(${fa}² − ${k}) ÷ ${m} + ${fb} × ${n} = ${res}`,clue:`(${fa}=${va}, ${fb}=${vb})`,pergunta:`Qual é o resultado?`,ans:`${res}`,ansN:res,tipo:'expr'};},
+  ()=>{const[fa,fb,fc]=f3(),d1=rndArr(DENOMS.slice(0,5)),d2=rndArr(DENOMS.slice(0,5)),n1=rnd(1,d1-1),n2=rnd(1,d2-1),vc=rnd(2,5),k=rnd(1,3),m=rnd(2,3);const raw=n1/d1+n2/d2-k+vc*m;if(raw<=0)return null;const[sn,sd]=simplify(Math.round(raw*d1*d2),d1*d2);return{eq:`${n1}/${d1} + ${n2}/${d2} − ${k} + ${m} × ${fc} = ${fmtFrac(sn,sd)}`,clue:`(${fc}=${vc})`,pergunta:`Qual é o resultado?`,ans:fmtFrac(sn,sd),ansN:sn/sd,tipo:'expr'};},
+];
 
-function gerarMult(tier){
-  if(tier==='facil'){
-    const fa=f1();
-    const b=rnd(2,5), a=rnd(2,5);
-    return{eq:`${fa} × ${b} = ${a*b}`,clue:'',pergunta:`Quanto vale ${fa}?`,ans:`${a}`,ansN:a,tipo:'mult'};
-  }
-  if(tier==='medio'){
-    const[fa,fb]=f2();
-    const va=rnd(3,9), vb=rnd(3,9);
-    return{eq:`${fa} × ${fb} = ${va*vb}`,clue:`(${fa} = ${va})`,pergunta:`Quanto vale ${fb}?`,ans:`${vb}`,ansN:vb,tipo:'mult'};
-  }
-  if(tier==='dificil'){
-    const[fa,fb]=f2();
-    const va=rnd(6,15), vb=rnd(6,12);
-    return{eq:`${fa} × ${fb} = ${va*vb}`,clue:`(${fa} = ${va})`,pergunta:`Quanto vale ${fb}?`,ans:`${vb}`,ansN:vb,tipo:'mult'};
-  }
-  const[fa,fb,fc]=f3();
-  const va=rnd(5,15), vb=rnd(5,10), k=rnd(3,9);
-  const res=va*vb+k;
-  return{eq:`${fa} × ${fb} + ${k} = ${res}`,clue:`(${fa}=${va}, ${fb}=${vb})`,pergunta:`Qual é o resultado?`,ans:`${res}`,ansN:res,tipo:'mult'};
-}
+// ══════════════════════════════════
+// IMPOSSÍVEL — fração + decimal misturados
+// ══════════════════════════════════
+const IMPOSSIVEL_GENS=[
+  ()=>{const[fa,fb]=f2(),d=rndArr(DENOMS.slice(0,6)),n=rnd(1,d-1),vb=rnd(2,4),dec=rnd(1,9)/10,k=rnd(2,4);const res=parseFloat((n/d+dec*k-Math.pow(vb,2)).toFixed(2));return{eq:`${fa}/${d} + ${fmtDec(dec)} × ${k} − ${fb}² = ${fmtDec(res,2)}`,clue:`(${fa}=${n}, ${fb}=${vb})`,pergunta:`Qual é o resultado?`,ans:fmtDec(res,2),ansN:res,tipo:'expr'};},
+  ()=>{const[fa,fb]=f2(),d=rndArr([2,4,5,10]),d2=rndArr(DENOMS.slice(0,6)),n1=rnd(1,d-1),n2=rnd(1,d2-1),dec=rnd(2,8)/10;const res=parseFloat((n1/d*dec+n2/d2).toFixed(4));const[sn,sd]=simplify(Math.round(res*d*d2*10),d*d2*10);return{eq:`(${fa}/${d}) × ${fmtDec(dec)} + ${fb}/${d2} = ?`,clue:`(${fa}=${n1}, ${fb}=${n2})`,pergunta:`Qual é o resultado?`,ans:fmtFrac(sn,sd),ansN:sn/sd,tipo:'fracao'};},
+  ()=>{const[fa,fb]=f2(),d=rndArr(DENOMS.slice(0,5)),d2=rndArr(DENOMS.slice(0,5)),n1=rnd(1,d-1),n2=rnd(1,d2-1),dec1=rnd(1,9)/10,dec2=rnd(1,9)/10,k=rnd(2,3);const raw=n1/d+dec1-n2/d2*k+dec2;if(raw<=0)return null;const res=parseFloat(raw.toFixed(2));return{eq:`${fa}/${d} + ${fmtDec(dec1)} − ${fb}/${d2} × ${k} + ${fmtDec(dec2)} = ${fmtDec(res,2)}`,clue:`(${fa}=${n1}, ${fb}=${n2})`,pergunta:`Qual é o resultado?`,ans:fmtDec(res,2),ansN:res,tipo:'expr'};},
+  ()=>{const[fa,fb]=f2(),va=rnd(2,5),vb=rnd(1,4),d=rndArr([2,4,5]),n=rnd(1,d-1),dec=rnd(1,9)/10;const raw=Math.pow(va,2)*n/d+dec-vb;if(raw<=0)return null;const res=parseFloat(raw.toFixed(2));return{eq:`${fa}² × (${n}/${d}) + ${fmtDec(dec)} − ${fb} = ${fmtDec(res,2)}`,clue:`(${fa}=${va}, ${fb}=${vb})`,pergunta:`Qual é o resultado?`,ans:fmtDec(res,2),ansN:res,tipo:'expr'};},
+  ()=>{const[fa,fb,fc]=f3(),d=rndArr(DENOMS.slice(0,6)),d2=rndArr(DENOMS.slice(0,6)),n1=rnd(1,d-1),n2=rnd(1,d2-1),vb=rnd(2,6),dec=rnd(1,9)/10;const raw=n1/d+vb*dec-n2/d2;if(raw<=0)return null;const res=parseFloat(raw.toFixed(2));return{eq:`${fa}/${d} + ${fb} × ${fmtDec(dec)} − ${fc}/${d2} = ${fmtDec(res,2)}`,clue:`(${fa}=${n1}, ${fb}=${vb}, ${fc}=${n2})`,pergunta:`Qual é o resultado?`,ans:fmtDec(res,2),ansN:res,tipo:'expr'};},
+  ()=>{const[fa,fb]=f2(),vb=rnd(2,3),d=rndArr(DENOMS.slice(0,6)),n=rnd(1,d-1),k=rnd(2,4),dec=rnd(1,9)/10;const[sn,sd]=simplify(n,d*k);const res=parseFloat((dec+sn/sd+Math.pow(vb,3)).toFixed(2));return{eq:`${fmtDec(dec)} + (${fa}/${d}) ÷ ${k} + ${fb}³ = ${fmtDec(res,2)}`,clue:`(${fa}=${n}, ${fb}=${vb})`,pergunta:`Qual é o resultado?`,ans:fmtDec(res,2),ansN:res,tipo:'expr'};},
+  ()=>{const fa=f1(),va=rnd(1,5),d=rndArr([2,4,5,10]),n=rnd(1,d-1),dec=rnd(2,8)/10;const inner=parseFloat((va+n/d).toFixed(3));const res=parseFloat((inner*dec).toFixed(4));const[sn,sd]=simplify(Math.round(res*d*1000),d*1000);return{eq:`(${fa} + ${n}/${d}) × ${fmtDec(dec)} = ?`,clue:`(${fa}=${va})`,pergunta:`Qual é o resultado?`,ans:fmtFrac(sn,sd),ansN:sn/sd,tipo:'expr'};},
+  ()=>{const[fa,fb,fc]=f3(),va=rnd(2,5),vc=rnd(4,12),d=rndArr(DENOMS.slice(0,5)),n1=rnd(1,d-1),dec=rnd(1,5)/10,k=rnd(2,3),m=rnd(2,3),nn=rnd(1,3);if(vc%m!==0)return null;const raw=Math.pow(va,2)+n1/d-dec*k+vc/m-nn;if(raw<=0)return null;const res=parseFloat(raw.toFixed(2));return{eq:`${fa}² + ${n1}/${d} − ${fmtDec(dec)} × ${k} + ${fc} ÷ ${m} − ${nn} = ${fmtDec(res,2)}`,clue:`(${fa}=${va}, ${fc}=${vc})`,pergunta:`Qual é o resultado?`,ans:fmtDec(res,2),ansN:res,tipo:'expr'};},
+];
 
-function gerarDiv(tier){
-  if(tier==='facil'){
-    const fa=f1();
-    const div=rnd(2,5), q=rnd(2,5);
-    return{eq:`${fa} ÷ ${div} = ${q}`,clue:'resultado exato',pergunta:`Quanto vale ${fa}?`,ans:`${div*q}`,ansN:div*q,tipo:'div'};
-  }
-  if(tier==='medio'){
-    const[fa,fb]=f2();
-    const div=rnd(3,9), q=rnd(4,10);
-    return{eq:`${fa} ÷ ${fb} = ${q}`,clue:`(${fb} = ${div})`,pergunta:`Quanto vale ${fa}?`,ans:`${div*q}`,ansN:div*q,tipo:'div'};
-  }
-  if(tier==='dificil'){
-    const[fa,fb]=f2();
-    const div=rnd(7,15), q=rnd(8,20), r=rnd(1,div-1);
-    const dvd=div*q+r;
-    return{eq:`${fa} ÷ ${fb} = ${q} resto ${r}`,clue:`(${fb} = ${div})`,pergunta:`Quanto vale ${fa}?`,ans:`${dvd}`,ansN:dvd,tipo:'div'};
-  }
-  const[fa,fb]=f2();
-  const div=rnd(13,25), q=rnd(15,30), r=rnd(1,div-1);
-  const dvd=div*q+r;
-  return{eq:`${fa} ÷ ${div} = ${q} resto ${r}`,clue:'encontre o dividendo',pergunta:`Quanto vale ${fa}?`,ans:`${dvd}`,ansN:dvd,tipo:'div'};
-}
-
-function gerarPot(tier){
-  if(tier==='facil'){
-    const fa=f1();
-    const base=rnd(2,4), exp=rnd(2,3);
-    return{eq:`${fa}${SUP[exp]} = ${Math.pow(base,exp)}`,clue:'qual é a base?',pergunta:`Quanto vale ${fa}?`,ans:`${base}`,ansN:base,tipo:'pot'};
-  }
-  if(tier==='medio'){
-    const[fa,fb]=f2();
-    const va=rnd(2,6), exp=rnd(2,3), potVal=Math.pow(va,exp);
-    const vb=rnd(2,8);
-    return{eq:`${fa}${SUP[exp]} + ${fb} = ${potVal+vb}`,clue:`(${fa} = ${va})`,pergunta:`Quanto vale ${fb}?`,ans:`${vb}`,ansN:vb,tipo:'pot'};
-  }
-  if(tier==='dificil'){
-    const[fa,fb]=f2();
-    const va=rnd(3,8), exp=rnd(2,4), potVal=Math.pow(va,exp);
-    const vb=rnd(2,10);
-    if(potVal-vb<=0)return gerarPot(tier);
-    return{eq:`${fa}${SUP[exp]} − ${fb} = ${potVal-vb}`,clue:`(${fa} = ${va})`,pergunta:`Quanto vale ${fb}?`,ans:`${vb}`,ansN:vb,tipo:'pot'};
-  }
-  const[fa,fb]=f2();
-  const va=rnd(3,7), ea=rnd(2,4), vb=rnd(2,6), eb=rnd(2,3);
-  const res=Math.pow(va,ea)+Math.pow(vb,eb);
-  return{eq:`${fa}${SUP[ea]} + ${fb}${SUP[eb]} = ?`,clue:`(${fa}=${va}, ${fb}=${vb})`,pergunta:`Qual é o resultado?`,ans:`${res}`,ansN:res,tipo:'pot'};
-}
-
-function gerarExpr(tier){
-  if(tier==='medio'){
-    const[fa,fb]=f2();
-    const va=rnd(2,8), vb=rnd(2,6), k=rnd(2,10);
-    const res=va*vb+k;
-    return{eq:`${fa} × ${fb} + ${k} = ${res}`,clue:`(${fa} = ${va})`,pergunta:`Quanto vale ${fb}?`,ans:`${vb}`,ansN:vb,tipo:'expr'};
-  }
-  if(tier==='dificil'){
-    const[fa,fb,fc]=f3();
-    const va=rnd(3,8), vb=rnd(3,7), vc=rnd(2,5), k=rnd(1,5);
-    const res=va*vb-vc*k;
-    if(res<=0)return gerarExpr(tier);
-    return{eq:`${fa} × ${fb} − ${fc} × ${k} = ${res}`,clue:`(${fa}=${va}, ${fc}=${vc})`,pergunta:`Quanto vale ${fb}?`,ans:`${vb}`,ansN:vb,tipo:'expr'};
-  }
-  const[fa,fb,fc]=f3();
-  const va=rnd(2,5), ea=rnd(2,3), vb=rnd(2,6), vc=rnd(2,5);
-  const res=Math.pow(va,ea)+vb*vc;
-  return{eq:`${fa}${SUP[ea]} + ${fb} × ${fc} = ${res}`,clue:`(${fa}=${va}, ${fb}=${vb})`,pergunta:`Quanto vale ${fc}?`,ans:`${vc}`,ansN:vc,tipo:'expr'};
-}
+// ANTI-REPETIÇÃO
+const usedEqs=new Set();
 
 function gerarQuestao(nivel){
   const tier=getTier(nivel);
-  const pools={
-    facil:[gerarDecimal,gerarFracao,gerarMult,gerarDiv,gerarPot],
-    medio:[gerarDecimal,gerarFracao,gerarMult,gerarDiv,gerarPot,gerarExpr],
-    dificil:[gerarDecimal,gerarFracao,gerarMult,gerarDiv,gerarPot,gerarExpr],
-    impossivel:[gerarDecimal,gerarFracao,gerarMult,gerarDiv,gerarPot,gerarExpr],
-  };
-  let q,tries=0;
-  do{q=rndArr(pools[tier])(tier);tries++;}
-  while((!q||q.ansN===undefined||isNaN(q.ansN)||!q.ans||q.ans.includes('NaN'))&&tries<30);
-  return q;
+  const pools={facil:FACIL_GENS,medio:MEDIO_GENS,dificil:DIFICIL_GENS,impossivel:IMPOSSIVEL_GENS};
+  const pool=shuffle([...pools[tier]]);
+  for(let i=0;i<pool.length*6;i++){
+    const fn=pool[i%pool.length];
+    for(let t=0;t<12;t++){
+      const q=fn();
+      if(!q||!q.eq||!q.ans||isNaN(q.ansN)||q.ans.includes('NaN')||q.ans==='undefined')continue;
+      if(!usedEqs.has(q.eq)){usedEqs.add(q.eq);return q;}
+    }
+  }
+  for(let t=0;t<40;t++){const q=rndArr(pools[tier])();if(q&&q.eq&&q.ans&&!isNaN(q.ansN)&&!q.ans.includes('NaN'))return q;}
+  return null;
 }
 
 function makeOpts(q){
   const{ans,ansN,tipo}=q;
   const set=new Set([ans]);
   let t=0;
-  while(set.size<4&&t<400){
+  while(set.size<4&&t<500){
     t++;let fake;
-    if(tipo==='decimal'){
-      const c=ans.includes(',')&&ans.split(',')[1]?.length>1?2:1;
-      const v=parseFloat((ansN+(Math.random()-.5)*Math.max(1,Math.abs(ansN)*.8)).toFixed(c));
-      if(v>0&&v!==ansN)fake=fmtDec(v,c);
-    } else if(tipo==='fracao'){
-      const d=rndArr(DENOMS);
-      const n=rnd(1,d*2);
-      const s=fmtFrac(n,d);
-      if(s!==ans)fake=s;
+    if(tipo==='decimal'||ans.includes(',')){
+      const c=ans.split(',')[1]?.length>1?2:1;
+      const v=parseFloat((ansN+(Math.random()-.5)*Math.max(0.5,Math.abs(ansN)*.7)).toFixed(c));
+      if(v!==ansN&&v!==0)fake=fmtDec(v,c);
+    } else if(tipo==='fracao'||ans.includes('/')){
+      const d=rndArr(DENOMS);const n=rnd(1,d*2);
+      const s=fmtFrac(n,d);if(s!==ans)fake=s;
     } else {
-      const spread=Math.max(2,Math.round(Math.abs(ansN)*.2));
+      const spread=Math.max(2,Math.round(Math.abs(ansN)*.22));
       const delta=rnd(-spread,spread);
       if(delta!==0)fake=`${Math.round(ansN+delta)}`;
     }
     if(fake&&fake!==ans&&!set.has(fake))set.add(fake);
   }
-  while(set.size<4){
-    const v=Math.abs(Math.round(ansN))+rnd(1,6);
-    const s=`${v}`;
-    if(!set.has(s))set.add(s);
-  }
+  while(set.size<4){const v=Math.abs(Math.round(ansN))+rnd(1,7);const s=`${v}`;if(!set.has(s))set.add(s);}
   return shuffle([...set]);
 }
 
-// ── ESTADO ──
+// ESTADO
 let S={};
 
 function updateHUD(){
@@ -520,26 +339,18 @@ function updateHUD(){
   document.getElementById('prog-fill').style.width=pct+'%';
   document.getElementById('prog-pct').textContent=pct+'%';
   document.getElementById('prog-lbl').textContent=`Questão ${done+1} de 300`;
-
-  // dots — janela de 15 níveis
-  const dots=document.getElementById('prog-dots');
-  dots.innerHTML='';
-  const start=Math.max(1,S.nivel-7), end=Math.min(60,start+14);
-  for(let i=start;i<=end;i++){
-    const d=document.createElement('div');
-    d.className='pdot'+(i<S.nivel?' done':i===S.nivel?' current':'');
-    dots.appendChild(d);
-  }
-
+  const dots=document.getElementById('prog-dots');dots.innerHTML='';
+  const start=Math.max(1,S.nivel-7),end=Math.min(60,start+14);
+  for(let i=start;i<=end;i++){const d=document.createElement('div');d.className='pdot'+(i<S.nivel?' done':i===S.nivel?' current':'');dots.appendChild(d);}
   const tierMap={facil:['lb-f','🌱 Fácil'],medio:['lb-m','🌿 Médio'],dificil:['lb-d','🔥 Difícil'],impossivel:['lb-i','💀 Impossível']};
   const[cls,lbl]=tierMap[getTier(S.nivel)];
-  const b=document.getElementById('lvl-badge');
-  b.className='lvl-badge '+cls;b.textContent=lbl;
+  const b=document.getElementById('lvl-badge');b.className='lvl-badge '+cls;b.textContent=lbl;
 }
 
 function showQuestion(){
   S.answered=false;
   S.cur=gerarQuestao(S.nivel);
+  if(!S.cur){S.cur={eq:'Erro ao gerar questão',clue:'',pergunta:'Avance para o próximo nível',ans:'0',ansN:0,tipo:'expr'};}
   const opts=makeOpts(S.cur);
   document.getElementById('qcard').className='qcard';
   document.getElementById('eq-disp').textContent=S.cur.eq;
@@ -548,60 +359,41 @@ function showQuestion(){
   document.getElementById('tipo-tag').textContent=TIPO_NOMES[S.cur.tipo]||'';
   document.getElementById('feedback').textContent='';
   document.getElementById('feedback').className='feedback empty';
-  const grid=document.getElementById('opts-grid');
-  grid.innerHTML='';
-  opts.forEach(v=>{
-    const btn=document.createElement('button');
-    btn.className='opt-btn';btn.textContent=v;
-    btn.onclick=()=>pick(btn,v);
-    grid.appendChild(btn);
-  });
+  const grid=document.getElementById('opts-grid');grid.innerHTML='';
+  opts.forEach(v=>{const btn=document.createElement('button');btn.className='opt-btn';btn.textContent=v;btn.onclick=()=>pick(btn,v);grid.appendChild(btn);});
   updateHUD();updateCombo();
 }
 
 function updateCombo(){
   const badge=document.getElementById('combo');
   document.getElementById('combo-n').textContent=S.combo;
-  if(S.combo>=3)badge.classList.add('show');
-  else badge.classList.remove('show');
+  if(S.combo>=3)badge.classList.add('show');else badge.classList.remove('show');
 }
 
 function pick(btn,val){
   if(S.answered)return;
   S.answered=true;
   document.querySelectorAll('.opt-btn').forEach(b=>b.disabled=true);
-  const fb=document.getElementById('feedback');
-  const qcard=document.getElementById('qcard');
-  const pts=S.nivel*10;
-
+  const fb=document.getElementById('feedback'),qcard=document.getElementById('qcard'),pts=S.nivel*10;
   if(val===S.cur.ans){
     btn.classList.add('correct');qcard.classList.add('ok');
     S.score+=pts;S.acertos++;S.combo++;
     let bonus='';
-    if(S.combo===3){S.score+=50;S.combos_total++;bonus=' 🔥 +50 Combo!';}
-    else if(S.combo>3&&S.combo%3===0){S.score+=50;S.combos_total++;bonus=` 🔥 +50 Combo ×${S.combo}!`;}
-    fb.className='feedback ok';
-    fb.textContent=`✅ Correto! +${pts} pts${bonus}`;
+    if(S.combo%3===0){S.score+=50;S.combos_total++;bonus=` 🔥 +50 Combo ×${S.combo}!`;}
+    fb.className='feedback ok';fb.textContent=`✅ Correto! +${pts} pts${bonus}`;
   } else {
     btn.classList.add('wrong');qcard.classList.add('ko');
     document.querySelectorAll('.opt-btn').forEach(b=>{if(b.textContent===S.cur.ans)b.classList.add('correct');});
     S.erros++;S.combo=0;
-    fb.className='feedback ko';
-    fb.textContent=`❌ Resposta correta: ${S.cur.ans}`;
+    fb.className='feedback ko';fb.textContent=`❌ Resposta correta: ${S.cur.ans}`;
   }
   updateHUD();updateCombo();
-
   setTimeout(()=>{
     if(S.qAtual>=5){
       if(S.nivel<60){
         const next=S.nivel+1;S.nivel=next;S.qAtual=1;
         const tier=getTier(next);
-        const toasts={
-          facil:['🌱',`Nível ${next} — Fácil!`,'Continue aquecendo...'],
-          medio:['🌿',`Nível ${next} — Médio!`,'Mais atenção agora!'],
-          dificil:['🔥',`Nível ${next} — Difícil!`,'Concentre-se nas pistas!'],
-          impossivel:['💀',`Nível ${next} — IMPOSSÍVEL!`,'Só os melhores chegam aqui!'],
-        };
+        const toasts={facil:['🌱',`Nível ${next}!`,'Continue aquecendo...'],medio:['🌿',`Nível ${next} — Médio!`,'Atenção aos parênteses!'],dificil:['🔥',`Nível ${next} — Difícil!`,'4 ou 5 termos agora!'],impossivel:['💀',`Nível ${next} — IMPOSSÍVEL!`,'Fração e decimal juntos!']};
         const[ico,title,sub]=toasts[tier];
         showToast(ico,title,sub,()=>showQuestion());
       } else {showEnd();}
@@ -611,11 +403,8 @@ function pick(btn,val){
 
 function showToast(ico,title,sub,cb){
   const t=document.getElementById('toast');
-  document.getElementById('t-ico').textContent=ico;
-  document.getElementById('t-title').textContent=title;
-  document.getElementById('t-sub').textContent=sub;
-  t.classList.add('show');
-  setTimeout(()=>{t.classList.remove('show');setTimeout(cb,300);},2200);
+  document.getElementById('t-ico').textContent=ico;document.getElementById('t-title').textContent=title;document.getElementById('t-sub').textContent=sub;
+  t.classList.add('show');setTimeout(()=>{t.classList.remove('show');setTimeout(cb,300);},2200);
 }
 
 function showEnd(){
@@ -631,18 +420,11 @@ function showEnd(){
   else if(S.score>=5000){trophy='🥈';cls='Ótimo desempenho! 🎉';}
   else if(S.score>=2000){trophy='🥉';cls='Bom trabalho! 💪';}
   else{trophy='🌱';cls='Continue praticando! 📚';}
-  document.getElementById('e-trophy').textContent=trophy;
-  document.getElementById('e-class').textContent=cls;
+  document.getElementById('e-trophy').textContent=trophy;document.getElementById('e-class').textContent=cls;
 }
 
-function setScreen(id){
-  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-}
-function startGame(){
-  S={score:0,nivel:1,qAtual:1,acertos:0,erros:0,combo:0,combos_total:0,cur:null,answered:false};
-  setScreen('game-screen');showQuestion();
-}
+function setScreen(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');}
+function startGame(){S={score:0,nivel:1,qAtual:1,acertos:0,erros:0,combo:0,combos_total:0,cur:null,answered:false};usedEqs.clear();setScreen('game-screen');showQuestion();}
 function restartGame(){setScreen('menu-screen');}
 </script>
 </body>
